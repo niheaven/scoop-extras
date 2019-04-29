@@ -1,0 +1,23 @@
+{
+    "homepage": "https://github.com/cbucher/LocalizeRC",
+    "version": "1.12",
+    "description": "RC Localization Tool.",
+    "license": "BSD-2-Clause",
+    "url": "https://github.com/cbucher/LocalizeRC/releases/download/1.12/LocalizeRC.exe",
+    "hash": "sha1:df6d3da24ef6070f571448471a4813fe76e08fd4",
+    "bin": "LocalizeRC.exe",
+    "shortcuts": [
+        [
+            "LocalizeRC.exe",
+            "LocalizeRC"
+        ]
+    ],
+    "checkver": "github",
+    "autoupdate": {
+        "url": "https://github.com/cbucher/LocalizeRC/releases/download/$version/LocalizeRC.exe",
+        "hash": {
+            "url": "https://github.com/cbucher/LocalizeRC/releases/tag/$version",
+            "regex": "SHA1: $sha1"
+        }
+    }
+}
