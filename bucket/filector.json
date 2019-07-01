@@ -1,0 +1,24 @@
+{
+    "homepage": "https://github.com/tomaschyly/FileCtor",
+    "version": "1.1.1",
+    "license": "GPL-3.0-or-later",
+    "description": "File inspector with interactive javascript console.",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/tomaschyly/FileCtor/releases/download/v1.1.1/FileCtor-win32-x64.zip",
+            "hash": "595f97fbeb7bde574facb23a6a7e720595e728d517f96e46d0e594a797a85a07",
+            "extract_dir": "FileCtor-win32-x64"
+        }
+    },
+    "bin": "FileCtor.exe",
+    "shortcuts": [
+        [
+            "FileCtor.exe",
+            "FileCtor"
+        ]
+    ],
+    "checkver": "github",
+    "autoupdate": {
+        "url": "https://github.com/tomaschyly/FileCtor/releases/download/v$version/FileCtor-win32-x64.zip"
+    }
+}

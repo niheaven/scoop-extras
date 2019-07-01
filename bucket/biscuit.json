@@ -1,0 +1,37 @@
+{
+    "homepage": "https://eatbiscuit.com/",
+    "version": "1.1.2",
+    "license": "GPL-3.0-or-later",
+    "description": "Browser where your favorite apps won't get buried in tabs.",
+    "url": "https://github.com/agata/dl.biscuit/releases/download/v1.1.2/biscuit-setup-1.1.2.exe#/dl.7z",
+    "hash": "sha512:239987498b2dda585fb865d8cb871290aa672f0efc791005b914d80ec5056b2f0ff4b92a9437d22ceeb665672d9bce47b61d7ec5384d9490bb499b276b0ea1a1",
+    "architecture": {
+        "64bit": {
+            "installer": {
+                "script": "Expand-7zipArchive \"$dir\\`$PLUGINSDIR\\app-64.7z\" \"$dir\""
+            }
+        },
+        "32bit": {
+            "installer": {
+                "script": "Expand-7zipArchive \"$dir\\`$PLUGINSDIR\\app-32.7z\" \"$dir\""
+            }
+        }
+    },
+    "post_install": "Remove-Item \"$dir\\`$PLUGINSDIR\", \"$dir\\Uninstall*\" -Force -Recurse",
+    "shortcuts": [
+        [
+            "Biscuit.exe",
+            "Biscuit"
+        ]
+    ],
+    "checkver": {
+        "github": "https://github.com/agata/dl.biscuit/"
+    },
+    "autoupdate": {
+        "url": "https://github.com/agata/dl.biscuit/releases/download/v$version/biscuit-setup-$version.exe#/dl.7z",
+        "hash": {
+            "url": "$baseurl/latest.yml",
+            "regex": "sha512: $base64"
+        }
+    }
+}

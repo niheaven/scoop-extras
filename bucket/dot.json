@@ -1,0 +1,34 @@
+{
+    "homepage": "https://getdot.js.org/",
+    "version": "2.1.0",
+    "license": "GPL-3.0-or-later",
+    "description": "A beautiful browser with material UI, with built-in adblock, based on Wexond.",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/dot-browser/desktop/releases/download/v2.1.0/Dot.Setup.2.1.0.exe#/dl.7z",
+            "hash": "sha512:5ba57a07cb2dd8f8fb44f9b7950ce8810da8429c8ec03114241b4577801b1e73adefff4eb1305fab2bfb325974310fe846959ba4cd4000c440b553b294664abd",
+            "installer": {
+                "script": [
+                    "Expand-7zipArchive \"$dir\\`$PLUGINSDIR\\app-64.7z\" \"$dir\"",
+                    "Remove-Item \"$dir\\`$PLUGINSDIR\", \"$dir\\Uninstall*\" -Force -Recurse"
+                ]
+            },
+            "shortcuts": [
+                [
+                    "Dot.exe",
+                    "Dot"
+                ]
+            ]
+        }
+    },
+    "checkver": {
+        "github": "https://github.com/dot-browser/desktop"
+    },
+    "autoupdate": {
+        "url": "https://github.com/dot-browser/desktop/releases/download/v$version/Dot.Setup.$version.exe#/dl.7z",
+        "hash": {
+            "url": "$baseurl/latest.yml",
+            "regex": "sha512: $base64"
+        }
+    }
+}
