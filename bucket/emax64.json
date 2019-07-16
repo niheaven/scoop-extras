@@ -1,0 +1,37 @@
+{
+    "homepage": "https://ntemacs.sourceforge.io",
+    "description": "64-bit Emacs for Windows",
+    "version": "26.2",
+    "license": "GPL-3.0-or-later",
+    "architecture": {
+        "64bit": {
+            "url": "https://downloads.sourceforge.net/project/ntemacs/emax64-26.2-20190417/emax64-bin-26.2.7z",
+            "hash": "sha1:1b9affbf4b62b0023aabf9d5e4ee7af8bd21ce40"
+        }
+    },
+    "extract_dir": "emax64",
+    "bin": [
+        [
+            "bin\\runemacs.exe",
+            "emacs"
+        ],
+        "bin\\emacsclient.exe"
+    ],
+    "shortcuts": [
+        [
+            "bin\\runemacs.exe",
+            "Emacs"
+        ]
+    ],
+    "checkver": {
+        "github": "https://github.com/m-parashar/emax64",
+        "regex": ">(?<build>emax64-([\\d.]+)-\\d+)<"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://downloads.sourceforge.net/project/ntemacs/$matchBuild/emax64-bin-$version.7z"
+            }
+        }
+    }
+}
